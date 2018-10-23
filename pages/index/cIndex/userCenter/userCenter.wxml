@@ -1,0 +1,54 @@
+<view class="container">
+  <view class='title'>个人中心</view>
+  <view class="userinfo">
+    <block >
+      <view class='img-box' bindtap='personInfo'>
+        <open-data class="head-img" type="userAvatarUrl"></open-data>
+      </view> 
+      <open-data type="userNickName"></open-data>
+    </block>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell" bindtap='queryOrder'>
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">订单管理</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell" bindtap='settleList' wx:if="{{user.role !== 'visitor'}}">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">结算列表</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell" wx:if="{{user.role == 'visitor'}}">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">我的优惠券</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell" bindtap='calling'>
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">联系我们</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+          <!-- todo 判断是 司机和企业 才显示 -->
+            <view class="weui-cell" bindtap='buildCode' wx:if="{{user.role == 'merchant' || user.role == 'driver' ||user.role == 'travelAgent'}}">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">我的二维码</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+        </view>
+        <view class='about-us'>
+          <image class='code' src='{{codeUrl}}'></image>
+          <view >扫描小程序号</view>
+          <view>一部手机游览奥园</view>
+        </view>
+</view>

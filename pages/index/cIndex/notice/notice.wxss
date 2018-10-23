@@ -1,0 +1,15 @@
+.ticket-notice{
+  padding: 0 20px;
+  font-size: 14px;
+}
+.ticket-notice .title{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.ticket-notice .welcome{
+  margin-top: 20px;
+}
+.ticket-notice .content{
+  margin-top: 10px;
+}

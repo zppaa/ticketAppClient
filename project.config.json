@@ -1,0 +1,197 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.0",
+	"appid": "wx64e4957c48388e97",
+	"projectname": "%E5%A5%A5%E8%BF%90%E5%A1%94%E7%A5%A8%E5%8A%A1",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"pluginRoot": "",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 25,
+			"list": [
+				{
+					"id": -1,
+					"name": "活动页面",
+					"pathName": "pages/index/cIndex/promotion/promotion",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "团队购票",
+					"pathName": "pages/index/cIndex/reserve/reserve",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购票须知",
+					"pathName": "pages/index/cIndex/notice/notice",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "导游注册",
+					"pathName": "pages/guide/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/index/cIndex/userCenter/userCenter",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "订单管理",
+					"pathName": "pages/order/manage/manage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "旅行社注册",
+					"pathName": "pages/travelAgent/register/register",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "商家注册",
+					"pathName": "pages/merchant/register/register",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "司机注册",
+					"pathName": "pages/driver/register/register",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "个人信息详情",
+					"pathName": "pages/index/cIndex/userDetail/userDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "周边美食",
+					"pathName": "pages/index/cIndex/arroundFood/arroundFood",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "优惠活动",
+					"pathName": "pages/index/cIndex/promotion/promotion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "旅行社信息",
+					"pathName": "pages/travelAgent/userDetail/userDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "游客",
+					"pathName": "pages/tourist/userDetail/userDetail",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "个人信息详情",
+					"pathName": "pages/index/cIndex/userDetail/userDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/order/orderList/orderList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页带参数",
+					"pathName": "pages/index/cIndex/index/index",
+					"query": "source=324932"
+				},
+				{
+					"id": -1,
+					"name": "优惠活动",
+					"pathName": "pages/index/cIndex/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "游客购票",
+					"pathName": "pages/tourist/reserve/reserve",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择身份",
+					"pathName": "pages/selectIdentity/selectIdentity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "游客购票",
+					"pathName": "pages/tourist/reserve/reserve",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "扫码",
+					"pathName": "pages/index/bIndex/QRscan/scan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "指定导游页面",
+					"pathName": "pages/index/cIndex/appointGuide/appointGuide",
+					"query": ""
+				},
+				{
+					"id": 23,
+					"name": "订单详情",
+					"pathName": "pages/index/bIndex/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "结算管理",
+					"pathName": "pages/index/cIndex/settleManage/settleManage",
+					"query": ""
+				},
+				{
+					"id": 25,
+					"name": "团队购票支付",
+					"pathName": "pages/index/cIndex/reserve/reserve",
+					"query": ""
+				}
+			]
+		}
+	}
+}

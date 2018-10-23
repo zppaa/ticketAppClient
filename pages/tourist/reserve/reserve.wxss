@@ -1,0 +1,83 @@
+/* pages/tourist/reserve/reserve.wxss */
+.group-ticket{
+  flex:1;
+  width: 100%;
+  overflow: auto;
+  padding: 0 10px;
+}
+.group-ticket .name{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.group-ticket .ticket-number{
+  display: flex;
+  margin-top: 50px;
+}
+.group-ticket .title {
+    width: 35%;
+    font-size: 15px;
+    padding-left: 10px;
+    box-sizing:border-box;
+}
+.group-ticket .date-view{
+  margin-top: 10px;
+}
+.group-ticket .date-view .desk picker{
+    border: 1px solid #ddd;
+    display: inline-block;
+    width: 80%;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+.group-ticket .desk{
+    flex:1;
+    display:inline-flex;
+}
+.group-ticket .number-input{
+    width: 80%;
+    padding:3px 12px;
+    font-size: 14px;
+}
+.group-ticket .form-item {
+    padding: 8px 0;
+    display: flex;
+}
+.note{
+  font-size: 13px;
+  color: red;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+.order{
+  text-align: center;
+  margin-top: 40px;
+}
+.total-price{
+  font-size: 15px;
+}
+.pay-btn{
+  width: 70%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.price-part{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 70px 0 50px;
+}
+.choose-coupon{
+  width: 70%;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+}
+.weui-btn-area{
+  margin: 0;
+}
+.cheap{
+  font-size: 14px;
+  color: red;
+  margin-top: 5px;
+}

@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+
+  <view class="mobileView">
+      <input class="mobile" placeholder='请输入手机号' bindblur="mobileChange" type="text"  />
+  </view>
+
+  <view class="psw1View">
+    <input class="psw" placeholder='请输入密码' password bindinput="pswChange" type="text"  />
+  </view>
+
+  <view class="submit">
+    <button type="primary" plain=''  bindtap="loginSystem">登 录</button>
+  </view>
+
+  <view class="help">
+    <navigator class="" url="" hover-class="navigator-hover" bindtap='forgetPsw'>忘记密码</navigator>
+    <!-- <navigator class="" url="../forgetPsw/verificationCode/verificationCode" hover-class="navigator-hover">忘记密码</navigator> -->
+    <navigator class="" url="../selectIdentity/selectIdentity" hover-class="navigator-hover">在线注册</navigator>
+  </view>
+
+</view>

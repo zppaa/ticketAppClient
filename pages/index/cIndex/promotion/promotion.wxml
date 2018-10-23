@@ -1,0 +1,38 @@
+<!--pages/index/cIndex/promotion/promotion.wxml-->
+<!-- 活动页面 -->
+<view class='active'>
+  <view class='active-title'>
+    <text>
+      {{activity.name}}
+    </text>
+  </view>
+  <view class='active-content'>
+    <view class='' style='margin-top:20px;'>
+      活动介绍
+    </view>
+    <text class='content'>
+      {{activity.introduce}}
+    </text>
+  </view>
+  <view class="page__bd">
+      <view class="weui-form-preview">
+          <view class="weui-form-preview__hd">
+              <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">优惠金额</view>
+                  <view class="weui-form-preview__value_in-hd">{{activity.money/100}}</view>
+              </view>
+          </view>
+          <view class="weui-form-preview__bd">
+              <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">开始时间</view>
+                  <view class="weui-form-preview__value">{{activity.startTime}}</view>
+              </view>
+              <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">结束时间</view>
+                  <view class="weui-form-preview__value">{{activity.endTime}}</view>
+              </view>
+          </view>
+          <button class="weui-btn" type="primary" bindtap='getGift'>领取</button>        
+      </view>
+  </view>
+</view>

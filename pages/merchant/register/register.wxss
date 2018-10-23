@@ -1,0 +1,95 @@
+/* pages/scenic/register/register.wxss */
+.title{
+  text-align: center;
+  padding:10px 0;
+}
+.title text{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.container>view{
+  width: 100%;
+  padding:6px 0;
+}
+.container>view>input,.container>view>textarea{
+  margin: 0px auto;
+  width: 80%;
+  padding:6px 12px;
+  border: 1px solid #ddd;
+  border-radius:2px;
+  
+}
+.container>view>textarea{
+  min-height:30px;
+}
+.container>view.identityCardView>view{
+  margin: 0px auto;
+  width: 80%;
+}
+.container>view>view>view{
+  float: left;
+}
+.container>view .tip{
+  width:40%;
+}
+.container>view .item{
+  width:60%;
+}
+.container>view .item .radio{
+   padding:0 12px; 
+}
+
+.weui-uploader {
+    border:1px solid #ddd;
+    padding: 0 12px; 
+    overflow: auto;
+}
+.weui-uploader .weui-uploader__hd{
+    width: 100%;
+}
+.weui-uploader .weui-uploader__bd {
+    width: 100%;
+}
+.weui-uploader .weui-uploader__bd .weui-uploader__input-box,.weui-uploader  .weui-uploader__file .weui-uploader__img{
+    width: 118px;
+    height: 118px;
+}
+
+/* .identityCardView view{
+  width:80%;
+  height:80px;
+  padding:6px 12px;
+  border:1px solid #ddd;
+  border-radius:2px;
+  line-height:80px;
+  text-align: center;
+  color:#ddd;
+  font-style: italic;
+} */
+
+
+
+.submit{
+  margin-top:10px;
+  height:40px;
+}
+.submit button{
+  width:80%;
+  font-size: 16px; 
+}
+.weui-vcode-btn{
+  font-size: 14px;
+}
+.container .weui-cell_vcode input.mobile{
+  margin-left:7%;
+}
+.container view.weui-cell__ft{margin-right: 7%}
+.backIndex{
+  display: flex;
+  justify-content: flex-end;
+}
+.backIndex view{
+  flex-basis: 25%;
+  color: #1AAD19;
+}

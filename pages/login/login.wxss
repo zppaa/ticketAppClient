@@ -1,0 +1,46 @@
+/* pages/login/login.wxss */
+
+.container {
+    justify-content: center;
+}
+
+.container>view {
+    width: 85%;
+    padding: 6px 0;
+}
+
+.container>view>input {
+    margin: 0px auto;
+    width: 75%; 
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height:30px;
+}
+
+.mobileView{
+  margin-top:-230px;
+}
+
+.submit {
+    margin-top: 10px;
+    height: 40px;
+}
+
+.submit button {
+    width: 80%;
+    font-size: 16px;
+}
+
+.help {
+    width: 100%;
+    text-align: right;
+    color:#999;
+}
+
+.help navigator {
+    display: inline-block;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: underline;
+}

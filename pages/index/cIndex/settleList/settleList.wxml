@@ -1,0 +1,14 @@
+<!--pages/index/cIndex/settleManage/settleManage.wxml-->
+<view class='settle-list'>
+  <view class="title">
+      <view class="">结算月份</view>
+      <view class="">金额/元</view>
+      <view class="">打款日期</view>
+  </view>
+  <view class="search-result" wx:for="{{settleList}}">
+      <view class="weui-cell__bd">{{item.month ? item.month : ''}}</view>
+      <view class="weui-cell__bd">{{item.income ? item.income : ''}}</view>
+      <view class="weui-cell__bd">{{item.payDate ? item.payDate : ''}}</view>
+  </view>
+  <view wx:if="{{dataShow}}" class='no-data'>-- 暂无数据 --</view>
+</view>

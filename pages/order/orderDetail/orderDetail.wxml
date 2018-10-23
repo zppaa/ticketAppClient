@@ -1,0 +1,111 @@
+<!--pages/index/bIndex/orderDetail/orderDetail.wxml-->
+<view class="container">
+  <view class="section">
+    <view class="page">
+      <view class='code-part' wx:if="{{codeShow}}">
+        <canvas class='canvas' canvas-id='canvas' ></canvas>
+        <button class="weui-btn share-btn" type="primary"  open-type='share' wx:if="{{showShare}}">转发</button>
+        <view class="page__hd">
+          <view class="page__title"></view>
+          <view class="page__desc center yonghu"> {{sourceName}}</view>
+        </view>
+      </view>
+      <view class="page__bd">
+        <view class="weui-form-preview">
+          <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">是否入园</view>
+              <view class="weui-form-preview__value_in-hd">{{!!orderData.enterTime?'是':'否'}}</view>
+            </view>
+          </view>
+          <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">实际入园时间</view>
+              <view class="weui-form-preview__value">{{orderData.enterTime?orderData.enterTime:''}}</view>
+            </view>
+            
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">订单号</view>
+              <view class="weui-form-preview__value">{{orderData.id}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">数量</view>
+              <view class="weui-form-preview__value">{{orderData.number}}</view>
+            </view>
+             <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">实际支付</view>
+              <view class="weui-form-preview__value">{{orderData.actualFee}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">优惠</view>
+              <view class="weui-form-preview__value">{{orderData.discountFee}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">单价</view>
+              <view class="weui-form-preview__value">{{orderData.unit}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">支付状态</view>
+              <view class="weui-form-preview__value">
+                <view wx:if="{{orderData.payStatus ==1 }}">未支付</view>
+                <view wx:elif="{{orderData.payStatus === 5}}">支付中</view>
+                <view wx:elif="{{orderData.payStatus === 10}}">支付成功</view>
+                <view wx:elif="{{orderData.payStatus === 15}}">支付失败</view>
+                <view wx:elif="{{orderData.payStatus === 20}}">已申请退款</view>
+                <view wx:elif="{{orderData.payStatus === 25}}">退款成功</view>
+                <view wx:elif="{{orderData.payStatus ===26}}">退款失败</view>
+                <view wx:elif="{{orderData.payStatus === 30}}">失效</view>
+                <view wx:else></view>
+              </view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">支付时间</view>
+              <view class="weui-form-preview__value">{{orderData.payTime?orderData.payTime:''}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">支付方式</view>
+              <view class="weui-form-preview__value">
+                <view wx:if="{{orderData.payWay ==1 }}">预充值</view>
+                <view wx:elif="{{orderData.payWay === 3}}">微信</view>
+                <view wx:elif="{{orderData.payWay === 5}}">现金</view>
+                <view wx:else></view>
+              </view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">购买类型</view>
+              <view class="weui-form-preview__value">
+                <view wx:if="{{orderData.type === 1 }}">线上</view>
+                <view wx:elif="{{orderData.type === 2}}">线下</view>
+                <view wx:else></view>
+              </view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">景区名</view>
+              <view class="weui-form-preview__value">{{orderData.placeName}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">预约入园时间</view>
+              <view class="weui-form-preview__value">{{orderData.reserveDate?orderData.reserveDate:''}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">浏览时间</view>
+              <view class="weui-form-preview__value">{{orderData.businessTime == 1?'日场':orderData.businessTime ==2?'夜场':''}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">客源地</view>
+              <view class="weui-form-preview__value">{{orderData.guestType == 1 ? '内宾':rderData.guestType == 2 ? '外宾':''}}</view>
+              </view>
+             <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">创建时间</view>
+              <view class="weui-form-preview__value">{{orderData.time?orderData.time:''}}</view>
+            </view>             
+          </view>        
+        </view>
+        <view class="submit">
+          <button type="primary" wx-if="{{!refundBtn}}" class='refund-btn' bindtap="refund">退 款</button>
+        </view>
+      </view>
+     
+    </view>
+  </view>
+</view>

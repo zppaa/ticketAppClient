@@ -1,0 +1,23 @@
+<!--pages/forgetPsw/verificationCode/verificationCode.wxml-->
+<view class="container">
+    <view class="mobileView">
+        <input class="mobile" placeholder='请输入手机号' bindblur="mobileChange" type="number" />
+    </view>
+
+
+    <view class="verificationCodeView">
+        <view>
+            <view class="inputView">
+                <input class="verificationCode" placeholder='请输入验证码' bindinput="verificationCodeChange" type="text" />
+            </view>
+            <view class="tipView">
+                <button size="mini" disabled='{{isDisabled}}' bindtap="getVerificationCode">{{tip}}</button>
+                <!-- <input type="text" disabled='{{isDisabled}}' bindtap="getVerificationCode" value="{{tip}}" /> -->
+            </view>
+        </view>
+    </view>
+
+    <view class="submit">
+        <button type="primary" bindtap='goEditPsw'>确 定</button>
+    </view>
+</view>

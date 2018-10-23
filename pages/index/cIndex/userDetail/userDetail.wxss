@@ -1,0 +1,33 @@
+/* pages/index/cIndex/userDetail/userDetail.wxss */
+
+.container{
+    height:100%;
+    color: #444;
+}
+
+.userImg>view{
+    width: 100%;
+    text-align: center;
+}
+
+.idcardView{
+    width: 100%;
+}
+.idcardView .title{
+    padding-left: 10px;
+}
+.idcardView .desk{
+    text-align: center;
+}
+
+.page{
+  width: 80%;
+}
+.center{
+  text-align: center;
+  color: #666;
+}
+.weui-form-preview__value_in-hd view{
+  font-size: 14px;
+  color: #999;
+}

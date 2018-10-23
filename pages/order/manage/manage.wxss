@@ -1,0 +1,180 @@
+/* pages/order/statistics/statistics.wxss */
+.manage-page{
+  font-size: 14px;
+}
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.manage-page .order-title{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.manage-page .statistic{
+  margin-top: 20px; 
+}
+.manage-page .date-part{
+  padding: 0 40px;
+}
+.start-date,.end-date{
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+.manage-page .end-date{
+   margin-top: 10px; 
+}
+.manage-page .date-title{
+   line-height: 36px; 
+   margin-left: 20px;
+}
+.manage-page picker{
+  width: 50%;
+  /* text-align: center; */
+  border: 1px solid #ddd;
+  display: inline-block;
+  padding: 6px 12px;
+}
+.manage-page .btn-part{
+  text-align: center;
+  margin-top: 20px;
+}
+.manage-page .btn-part button{
+  width: 55%;
+  height: 6vh;
+  line-height: 6vh;
+}
+.manage-page .order-detail{
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px 0;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.manage-page .list{
+  display: flex;
+  justify-content: space-between;
+}
+.manage-page .list view{
+  font-size: 14px;
+  /* width: 50%;
+  text-align: right;
+  margin-right: 20px; */
+}
+.manage-page .list .number{
+  text-align: left;
+  margin-left: 20px;
+}
+
+/* 订单列表 */
+.manage-page .tab{
+   flex: auto;  
+  display: flex;  
+  flex-direction: column;  
+  background: #fff; 
+ 
+
+}
+.manage-page .tab .tabbar{
+  flex: none;  
+  display: flex;  
+  align-items: center;  
+
+}
+
+.manage-page .weui-navbar__slider{
+  position: inherit!important;
+  flex: none;  
+  display: flex; 
+}
+.manage-page .title{
+  flex: none;  
+  display: flex;  
+  align-items: center; 
+  font-size: 14px;
+}
+.manage-page  .title view{
+  flex: 1;
+  text-align: center;
+  padding:20px 0px 15px;
+
+}
+.manage-page .tab .weui-tab__content{
+  padding-top: 0!important;
+  text-align: center;
+  margin-top: 0;
+}
+.manage-page .tab .weui-tab__panel {
+  /* position: relative; */
+  top: 0;
+  font-size:14px;
+  padding-top: 20px;
+}
+.manage-page .search-result{  
+  flex: auto;  
+  position: relative;   
+  font-size:14px;
+  text-align: center; 
+  min-height: 73.5vh;
+ }
+.manage-page .search-result scroll-view{  
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+  } 
+.manage-page .result-item{  
+  position: relative;  
+  display: flex; 
+  padding: 10px 0; 
+}   
+.manage-page .tab .loading{  
+  padding: 10rpx;  
+  text-align: center;  
+}  
+.manage-page .tab .loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+.manage-page .tab .loading.complete:before{  
+  display: none;  
+}
+.manage-page .tab .weui-navbar__slider{
+  background: none;
+}
+.manage-page .weui-navbar{
+  background:#ddd;
+}
+.manage-page .no-data{
+  text-align: center;
+  margin-top: 120px;
+}
+.search-result{ 
+  display: flex;
+  justify-content: space-around;
+  font-size:14px;
+  text-align: center; 
+  min-height: 73.5vh;
+  margin-top: 5px;
+}

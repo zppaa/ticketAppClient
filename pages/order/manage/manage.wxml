@@ -1,0 +1,112 @@
+<!--pages/order/statistics/statistics.wxml-->
+<view class="manage-page">
+    
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="margin-left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+                  <view class="tab">
+                      <view class="tabbar">
+                          <block wx:for="{{_tabs}}" wx:key="*this">
+                              <view id="{{index}}" class="weui-navbar__item {{_activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="listTabClick">
+                                  <view class="weui-navbar__title">{{item}}</view>
+                              </view>
+                          </block>
+                      </view>
+                      <view class="weui-navbar__slider" style="margin-left: {{_sliderLeft}}px; transform: translateX({{_sliderOffset}}px); -webkit-transform: translateX({{_sliderOffset}}px);"></view>
+                      <view class="title">
+                          <view class="">价格</view>
+                          <view class="">订票时间</view>
+                          <view class="">订票数量</view>
+                          <view class="">状态</view>
+
+                          <view wx:if="{{role=='guide'}}" class="">旅行社名称</view>
+                      </view>
+                      <view class="search-result">
+                        <scroll-view scroll-y="true" bindscrolltolower="scrollLower">  
+                                <navigator wx:for="{{allOrder}}" url="/pages/order/orderDetail/orderDetail?orderId={{item.id}}" class="result-item">
+                                    <view class="weui-cell__bd">{{item.totalPrice}}</view>
+                                    <view class="weui-cell__bd">{{item.time ? item.time : ''}}</view>
+                                    <view class="weui-cell__bd">{{item.number ? item.number : 0}}</view>
+                                    <view class="weui-cell__bd" wx:if="{{item.payStatus == 10}}">已完成</view>
+                                    <view class="weui-cell__bd" wx:if="{{item.payStatus == 25}}">已退款</view>
+                                    <view class="weui-cell__bd" wx:if="{{item.payStatus == 26}}">退款失败</view>
+                                    <view class="weui-cell__bd" wx:if="{{item.payStatus != 10 && item.payStatus != 25 && item.payStatus != 26}}"></view>
+                                    <view wx:if="{{role=='guide'}}" class="weui-cell__bd">{{item.userName}}</view>
+                                </navigator>  
+                                <view class="loading" hidden="{{!loading}}">正在载入更多...</view>  
+                                <view class="loading complete" hidden="{{!loadingComplete}}">已加载全部</view>  
+                              </scroll-view>   
+                      </view>
+                  </view>
+                
+                </view>
+                <view class="weui-tab__content statistic" hidden="{{activeIndex != 1}}" wx:if="{{statisShow}}">
+                  <view class='date-part'>
+                      <view class='start-date'>
+                        <view class='date-title'>起始日期: </view>
+                        <picker mode="date" value="{{startDate}}" start="" end="" bindchange="startDateChange">
+                          {{startDate}}
+                        </picker>
+                      </view>
+                      <view class='end-date'>
+                        <view class='date-title'>结束日期: </view>
+                        <picker mode="date" value="{{endDate}}" start="" end="" bindchange="endDateChange">
+                          {{endDate}}
+                        </picker>
+                      </view>
+                   
+                      <view class='btn-part'>
+                        <button class="weui-btn mini-btn" type="primary" size="mini" bindtap='search'>查询</button>
+                      </view>
+                  </view>
+                  
+                  <view class='order-detail'>
+                      
+                    <view class='list'>
+                      <view>订单总数：</view> 
+                      <view class='number'>{{orderNumber}}</view>
+                    </view>
+                    <view class='list'>
+                      <view>已退款： </view> 
+                      <view class='number'>{{toBeDone}}</view>
+                    </view>
+                    <view class='list'>
+                      <view>已支付： </view> 
+                      <view class='number'>{{alreadyPay}}</view>
+                    </view>
+                  </view> 
+                  <view wx:if="{{!statisShow}}" class='no-data'>
+                  暂无数据～～
+                  </view>
+
+                  <!-- zjw 统计页新增 -->
+                   <view class="title">
+                      <view class="">手机号</view>
+                      <view class="">订票数量</view>
+                      <view class="">总金额</view>
+                      <view class="">状态</view>
+                  </view>
+                  <view class="search-result" wx:for="{{stasticList}}">
+                      <view class="weui-cell__bd">{{item.mobile ? item.mobile : ''}}</view>
+                      <view class="weui-cell__bd">{{item.number ? item.number : 0}}</view>
+                      <view class="weui-cell__bd">{{item.totalPrice ? item.totalPrice : 0}}</view>
+                      <view class="weui-cell__bd" wx:if="{{item.payStatus == 10}}">已完成</view>
+                      <view class="weui-cell__bd" wx:if="{{item.payStatus == 25}}">已退款</view>
+                      <view class="weui-cell__bd" wx:if="{{item.payStatus == 26}}">退款失败</view>
+                      <view class="weui-cell__bd" wx:if="{{item.payStatus != 10 && item.payStatus != 25 && item.payStatus != 26}}"></view>
+                  </view> 
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

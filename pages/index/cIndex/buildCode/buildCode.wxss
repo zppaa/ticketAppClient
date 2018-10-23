@@ -1,0 +1,8 @@
+/* pages/index/cIndex/buildCode/buildCode.wxss */
+.build-code-page{
+  margin-top: 20vh;
+  text-align: center;
+}
+.build-code-page image{
+  width: 240px;
+}

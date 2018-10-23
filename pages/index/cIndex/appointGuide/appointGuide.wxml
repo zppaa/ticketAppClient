@@ -1,0 +1,29 @@
+<!--pages/index/cIndex/appointGuide/appointGuide.wxml-->
+<view class='appoint-guide'>
+  <view class='guide-part'>
+    <view class='appoint-part'>指定导游： </view>
+    <view style='overflow:hidden;'>
+      <input class="weui-input" placeholder="请输入导游姓名" bindinput="guide" value='{{name}}'/>
+      <view class='guide-box'>
+        <view wx:for="{{guideList}}" wx:key="item" id="{{item.id}}" bindtap='chooseGuide' wx:if="{{guideShow}}">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='btn-group'>
+    <button class="weui-btn mini-btn" type="primary" size="mini" bindtap='confirm'>确定</button>
+  </view>
+</view>
+
+  
+
+<!-- <view class='appoint-guide'>
+  <view>指定导游： </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{guideList}}">
+      <button type="default">{{guideName}}</button>
+  </picker>
+  <view wx:for="{{guideList}}" wx:key="item">
+    {{item}}
+  </view>
+</view> -->

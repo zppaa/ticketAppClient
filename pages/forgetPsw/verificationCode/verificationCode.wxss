@@ -1,0 +1,69 @@
+/* pages/forgetPsw/verificationCode/verificationCode.wxss */
+.container {
+    padding-top: 100px;
+}
+
+.container>view {
+    width: 100%;
+    padding: 6px 0;
+}
+
+.container .mobileView input {
+    box-sizing: border-box;
+    margin: 0px auto;
+    width: 80%;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+
+.container .verificationCodeView>view {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+}
+
+.container .verificationCodeView>view>view {
+    /* float: left; */
+}
+
+.container .verificationCodeView view.inputView {
+    box-sizing: border-box;
+    width: 60%;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+}
+
+.container .verificationCodeView view.inputView input {
+    width: 100%;
+}
+
+.container .verificationCodeView view.tipView {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-left: none;
+    width: 40%;
+    text-align: center;
+}
+.container .verificationCodeView view.tipView button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0px; 
+}
+.container .verificationCodeView view.tipView button::after { border-radius: 0; border: none; }
+
+.container .verificationCodeView view.tipView input {
+    padding: 6px 0;
+}
+
+.submit {
+    margin-top: 10px;
+    height: 40px;
+}
+
+.submit button {
+    width: 80%;
+    font-size: 16px;
+}

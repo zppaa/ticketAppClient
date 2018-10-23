@@ -1,0 +1,22 @@
+/* pages/index/cIndex/settleManage/settleManage.wxss */
+.settle-list .title{
+  flex: none;  
+  display: flex;  
+  justify-content: space-around;
+  align-items: center; 
+  font-size: 14px;
+  margin-top: 20px;
+}
+.settle-list .search-result{ 
+  display: flex;
+  justify-content: space-around;
+  font-size:14px;
+  text-align: center; 
+  min-height: 73.5vh;
+  margin-top: 5px;
+}
+.settle-list .no-data{
+    text-align:center;
+    margin-top:5px;
+    font-size:14px;
+}

@@ -1,0 +1,46 @@
+/* pages/selectIdentity/selectIdentity.wxss */
+
+/* .container {
+    justify-content: center;
+} */
+
+.container>view {
+    width: 100%;
+    padding: 6px 0;
+}
+
+.container .systemCheck {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* .container>view>view {
+    float: left;
+} */
+
+.container>view .tip {
+    width: 100%;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    font-size: 15px;
+}
+
+.container>view .item {
+    width: 70%;
+}
+
+.submit {
+    margin-top: 10px;
+    height: 40px;
+}
+
+.submit button {
+    width: 80%;
+    font-size: 16px;
+}
+.weui-cells{
+  width: 100%;
+  font-size: 14px;
+  margin-top: 10px;
+}

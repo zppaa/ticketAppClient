@@ -1,0 +1,36 @@
+<!--pages/tourist/reserve/reserve.wxml-->
+<view class='group-ticket'>
+    <view class='name'>{{mobile}}</view>
+    <view class='ticket-number'>
+      <view class='title'>购票数量：</view>
+      <view class='desk'>
+        <input class='number-input' value='{{ticketsNumber}}' bindinput='getNum' type='number' style='border: 1px solid #ddd;' disabled="{{inputDisable}}"></input>
+      </view>
+    </view>
+    <view class="form-item date-view">
+      <view class="title" bindtap='bindDateChange'>预约入园日期：</view>
+      <view class="desk">
+          <picker mode="date" name="date" value="{{time}}" start="{{startTime}}" end="{{endTime}}" bindchange="bindDateChange">
+              <view class="picker">
+                  {{time}}
+              </view>
+          </picker>
+      </view>
+    </view>
+    <!-- <view class='note'>
+      注：
+    </view> -->
+    <view class='order'>
+      <view class="weui-btn-area">
+        <button type="default" bindtap="open" class='choose-coupon' wx:if="{{cheapBtnShow}}">{{payTxt}}</button>
+      </view>
+      <view class='total-price price-part'>
+        <view class='total-price'>票总金额：{{totalMoney}}元 </view>
+        <view class='total-price'>单价：{{personPrice}}元/张 </view>
+      </view>
+      <view class='cheap' wx:if="{{cheapShow}}">
+        实际支付金额 {{realPay}}元
+      </view>
+      <button class='pay-btn' type='primary' bindtap='pay'>支付</button>
+    </view>
+</view>

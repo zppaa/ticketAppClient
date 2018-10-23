@@ -1,0 +1,58 @@
+<!--pages/dirver/register/register.wxml-->
+<view class="title">
+    <text>司机注册</text>
+</view>
+<view class='container page'>
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <input class="mobile" placeholder='请输入手机号' bindinput="mobileChange" type="text" value='{{mobile}}'/> 
+      <view class="weui-cell__ft">
+          <button disabled='{{codeBtnDisablied}}' class=" code-btn weui-btn weui-vcode-btn" bindtap='getCode' type="primary">{{codeBtnText}}</button>
+      </view>
+    </view>
+    <view class="codeView">
+        <input class="code" placeholder='请输入验证码' bindblur="codeChange" type="text" />
+    </view>
+    <!-- <view class="psw1View">
+        <input class="psw" placeholder='请输入密码' password bindblur="psw1Change" type="text" />
+    </view>
+
+    <view class="psw2View">
+        <input class="psw" placeholder='确认密码' password bindblur="psw2Change" type="text" />
+    </view> -->
+
+    <view class="nameView">
+        <input class="name" placeholder='请输入司机姓名' bindblur="nameChange" type="text" value='{{name}}'/>
+    </view>
+
+    <view class="idCardView">
+        <input class="idCard" placeholder='请输入身份证号' bindblur="idcardChange" type="text" value="{{idCard}}" />
+    </view>
+    <view class="identityCardView">
+        <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+                <view class="weui-uploader__title">上传驾驶证图片</view>
+                <view class="weui-uploader__info">{{files.length}}/1</view>
+            </view>
+            <view class="weui-uploader__bd">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{files}}" wx:key="*this">
+                        <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                        </view>
+                    </block>
+                </view>
+                <view class="weui-uploader__input-box" wx:if="{{isUploadShow}}">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="submit">
+        <button type="primary" plain='' bindtap="register" wx:if="{{!id}}">注 册</button>
+        <button type="primary" plain='' bindtap="registerEdit" wx:if="{{id}}">注 册</button>
+    </view>
+    <view class="backIndex">
+      <view bindtap="backIndex">返回首页</view>
+    </view>
+</view>

@@ -1,0 +1,122 @@
+<!--pages/index/bIndex/QRscan/scan.wxml-->
+<view class="container">
+  <view class="section">
+    <button type="primary" size="default" class='scanBtn' bindtap="scanBtn">点击扫码</button>
+
+    <view class="page">
+      <view class="page__hd">
+        <view class="page__title"></view>
+        <view class="page__desc center yonghu">用户 {{orderData.userName}}{{orderData.mobile }}</view>
+      </view>
+      <view class="page__bd">
+        <view class="weui-form-preview">
+          <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">是否入园</view>
+              <view class="weui-form-preview__value_in-hd">{{!!orderData.enterTime?'是':'否'}}</view>
+            </view>
+          </view>
+          <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">实际入园时间</view>
+              <view class="weui-form-preview__value">{{orderData.enterTime?orderData.enterTime:''}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">订单号</view>
+              <view class="weui-form-preview__value">{{orderData.id}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">支付状态</view>
+              <view class="weui-form-preview__value">
+                <view wx:if="{{orderData.payStatus ==1 }}">未支付</view>
+                <view wx:elif="{{orderData.payStatus === 5}}">支付中</view>
+                <view wx:elif="{{orderData.payStatus === 10}}">支付成功</view>
+                <view wx:elif="{{orderData.payStatus === 15}}">支付失败</view>
+                <view wx:elif="{{orderData.payStatus === 20}}">已申请退款</view>
+                <view wx:elif="{{orderData.payStatus === 25}}">退款成功</view>
+                <view wx:elif="{{orderData.payStatus ===26}}">退款失败</view>
+                <view wx:elif="{{orderData.payStatus === 30}}">失效</view>
+                <view wx:else></view>
+              </view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">支付时间</view>
+              <view class="weui-form-preview__value">{{orderData.payTime?orderData.payTime:''}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">支付金额</view>
+              <view class="weui-form-preview__value">{{orderData.totalPrice}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">支付方式</view>
+              <view class="weui-form-preview__value">
+                <view wx:if="{{orderData.payWay ==1 }}">预充值</view>
+                <view wx:elif="{{orderData.payWay === 3}}">微信</view>
+                <view wx:elif="{{orderData.payWay === 5}}">现金</view>
+                <view wx:else></view>
+              </view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">购买类型</view>
+              <view class="weui-form-preview__value">
+                <view wx:if="{{orderData.payWay === 1 }}">线上</view>
+                <view wx:elif="{{orderData.payWay === 2}}">线下</view>
+                <view wx:else></view>
+              </view>
+            </view>
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">景区名</view>
+              <view class="weui-form-preview__value">{{orderData.placeName}}</view>
+            </view>
+             <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">预约入园时间</view>
+              <view class="weui-form-preview__value">{{orderData.reserveDate?orderData.reserveDate:''}}</view>
+            </view>
+             <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">创建时间</view>
+              <view class="weui-form-preview__value">{{orderData.time?orderData.time:''}}</view>
+            </view>
+             <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">备注</view>
+              <view class="weui-form-preview__value">{{orderData.mark?orderData.mark:'无'}}</view>
+            </view>
+            <view class="table">
+              <view class="tr bg-w">
+                <view class="th">类型</view>
+                <view class="th">分类</view>
+                <view class="th">单价/元</view>
+                <view class="th">数量</view>
+              </view>
+              <block wx:for="{{ticketData}}" wx:key="{{id}}">
+                <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                  <view class="td">{{item.type===1?"团体票":"个体票"}}</view>
+                  <view class="td">{{item.cName}}</view>
+                  <view class="td">{{item.unit}}</view>
+                  <view class="td">{{item.number}}</view>
+                </view>
+                <view class="tr" wx:else>
+                  <view class="td">{{item.type===1?"团体票":"个体票"}}</view>
+                  <view class="td">{{item.cName}}</view>
+                  <view class="td">{{item.unit}}</view>
+                  <view class="td">{{item.number}}</view>
+                </view>
+              </block>
+            </view>
+          </view>         
+          <view class="weui-form-preview__ft">
+            <view hidden="{{ (!clickScan) ? true : false}}" class="center">
+              <view hidden="{{  (!!orderData.enterTime) ? true : false}}">
+                <button class="weui-btn scanPass" type="warn" bindtap="scanPass">通过入园</button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+     <view class="indexView currentView">扫码验票</view>
+     <view class="reserveView"  bindtap='orderPage'>订单查询</view>
+  </view>
+</view>

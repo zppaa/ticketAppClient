@@ -1,0 +1,10 @@
+<!--pages/index/cIndex/buildCode/buildCode.wxml-->
+ <view class='build-code-page'>
+  <image src='{{codeUrl}}' bindtap='saveImgToPhotosAlbumTap'></image>
+</view> 
+
+<!-- <view class='build-code-page'>
+  <text class='search_no'>点击可保存及分享二维码</text>  
+  <view class='view_img' >  
+  <image class='img' bindtap="previewImage" src='{{codeUrl}}'></image></view>  
+</view>  -->

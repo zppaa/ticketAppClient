@@ -1,0 +1,20 @@
+<!--pages/forgetPsw/changePsw/changePsw.wxml-->
+<view class="container">
+
+  <view class="oldPswView">
+      <input class="oldPsw" placeholder='请输入旧密码' password bindblur="oldPswChange" type="text"  />
+  </view>
+
+  <view class="psw1View">
+    <input class="psw" placeholder='请输入新密码' password bindblur="psw1Change" type="text"  />
+  </view>
+
+  <view class="psw2View">
+    <input class="psw" placeholder='再次输入新密码' password bindblur="psw2Change" type="text"  />
+  </view>
+
+  <view class="submit">
+    <button type="primary" plain=''  bindtap="changePsw">确 定</button>
+  </view>
+
+</view>

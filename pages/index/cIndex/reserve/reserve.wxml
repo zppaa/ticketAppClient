@@ -1,0 +1,53 @@
+<!--pages/index/cIndex/reserve/reserve.wxml-->
+<view class='group-ticket'>
+    <view class='name'>{{sourceName}}</view>
+    <view class='ticket-number'>
+      <view class='title'>购票数量：</view>
+      <view class='desk'>
+        <input class='number-input' type='number' bindinput='getNum' style='border: 1px solid #ddd;' placeholder='请填写购票数量' />
+      </view>
+    </view>
+    <view class="form-item date-view">
+      <view class="title" bindtap='bindDateChange'>预约入园日期：</view>
+      <view class="desk">
+          <picker mode="date" name="date" value="{{time}}" start="{{startTime}}" end="{{endTime}}" bindchange="bindDateChange">
+              <view class="picker">
+                  {{time}}
+              </view>
+          </picker>
+      </view>
+    </view>
+    <view class='in-time'>
+      <view class='title'>浏览时间：</view>
+      <view class='desk'>
+        <picker value="{{timeValue}}" range="{{timeRange}}" bindchange="timeSelect">
+        <view>{{timeRange[timeValue-1]}}</view>
+        </picker> 
+      </view>
+    </view>
+    <view class='origin'>
+      <view class='title'>客源地：</view>
+      <view class='desk'>
+        <picker value="{{originValue}}" range="{{originRange}}" bindchange="originSelect">
+        <view>{{originRange[originValue-1]}}</view>
+        </picker> 
+      </view>
+    </view>
+    <view class='note'>
+      注：团队购票需10人或以上的统一购票,如不满10人的团队,票价将按照合同协议所签订的金额。
+    </view>
+    <view class='tips'>
+      <view><text>日场时间 9：00-16：30</text><text>兑票时间 9：00-16：00</text></view>
+      <view><text>夜场时间 17：00-22：00</text><text>兑票时间 17：00-21：00</text></view>
+    </view>
+    <view class='order'>
+      <!-- <view class='price-part'>
+        <view class='total-price'>票总金额：{{totalMoney}}元 </view>
+        <view class='total-price'>单价：{{unit}}元/张 </view>
+      </view> -->
+    
+      <button class="weui-btn pay-btn" type="primary" bindtap='confirm'>确定</button>
+    </view>
+</view>
+
+

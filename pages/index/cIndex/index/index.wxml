@@ -1,0 +1,93 @@
+<view class='index-page'>
+  <view class='img-top' >
+    <image src="{{itemUrl}}"></image>
+  </view> 
+  <!-- <view class="example" bindtap="activity" wx:if="{{showActivity}}">
+    <view class="marquee" style='font-size:14px;'>        
+        <view class="content" style='width:100%;text-align:right;'>
+            <text>{{text}}</text>
+        </view>
+    </view>
+  </view> -->
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{couponList}}" wx:key="item">
+      <swiper-item>
+        <image src="{{item.picture}}" class="slide-image" bindtap="activity" id="{{item.id}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--弹窗-->
+<!-- <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view> -->
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">营业时间</view>
+  <view class="modal-content">
+    <view>日场：9:00-17:00</view>
+    <view>换票时间：9:00-16:00</view>
+    <view>夜场：17:00-22:00</view>
+    <view>换票时间：17:00-21:00</view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+  <view class="weui-cells weui-cells_after-title">
+            <view class='work-time' bindtap="showModal">
+                <view class='top-part'>
+                  <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                  <view class="weui-cell__bd">营业时间</view>
+                </view> 
+            </view>
+            <view class="weui-cell" bindtap="ticketNotice">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">游客须知</view>
+            </view>
+            <view class="weui-cell" bindtap="arroundFood">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">奥林匹克塔周边美食</view>
+            </view>
+    </view>
+    <view class='btn-group weui-cell' style='padding:0 15px;'>
+              <view class="weui-tab">
+                <view class="weui-navbar">
+                    <block wx:for="{{tabs}}" wx:key="*this">
+                        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                            <view class="weui-navbar__title">{{item}}</view>
+                        </view>
+                    </block>
+                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+                </view>
+                <view class="weui-tab__panel">
+                    <view class="weui-tab__content buy-ticket" hidden="{{activeIndex != 0}}">
+                      <!-- <view class='ticket-group weui-cell'>
+                        <view class='ticket-price'>
+                          <view>成人票：<text>{{ticketPrice}}元</text>/张</view>
+                          <view class='ticket-notice'>一米三以下儿童免票入塔</view>
+                        </view>
+                        <view class=''>
+                          <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="pay">购票</button>
+                        </view>
+                      </view> -->
+                      <view class='ticket-group weui-cell' wx:for="{{ticketsList}}" wx:key="item" id="{{item.id}}">
+                        <view class='ticket-price'>
+                          <view>{{item.name}}：<text>{{item.unit/100}}元</text>/张</view>
+                        </view>
+                        <view class=''>
+                          <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="pay" id="{{item.id}}" data-unit="{{item.unit}}">支付</button>
+                        </view>
+                      </view>
+                      <view class='ticket-notice'>一米三以下儿童免票入塔（不含一米三）</view>
+                    </view>
+                    <view class="weui-tab__content scenic-intro"  hidden="{{activeIndex != 1}}">北京奥林匹克塔的塔体由五座186米至246.8米高的独立塔组合而成，其以“生命之树”为设计理念，寓意为生命之树从地壳破土而出，自然生长，在塔的顶部逐渐向四周延展，形成树冠形态。五个高低不同的塔身在空中似合似分，造型独特，蕴含着奥运五环蓬勃向上的精神风貌。</view>
+                </view>
+              </view>
+            </view>
+</view>

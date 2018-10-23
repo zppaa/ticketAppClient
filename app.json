@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/cIndex/index/index",
+    "pages/index/cIndex/notice/notice",
+    "pages/index/cIndex/promotion/promotion",
+    "pages/index/cIndex/userDetail/userDetail",
+    "pages/index/cIndex/buildCode/buildCode",
+    "pages/index/cIndex/arroundFood/arroundFood",
+    "pages/index/cIndex/coupon/coupon",
+    "pages/index/cIndex/settleList/settleList",
+    "pages/order/manage/manage",
+    "pages/login/login",
+    "pages/selectIdentity/selectIdentity",
+    "pages/tourist/register/register",
+    "pages/guide/register/register",
+    "pages/travelAgent/register/register",
+    "pages/merchant/register/register",
+    "pages/index/cIndex/reserve/reserve",
+    "pages/index/cIndex/userCenter/userCenter",
+    "pages/order/payment/payment",
+    "pages/order/orderDetail/orderDetail",
+    "pages/index/bIndex/QRscan/scan",
+    "pages/index/bIndex/order/orderList",
+    "pages/index/bIndex/orderDetail/orderDetail",
+    "pages/forgetPsw/verificationCode/verificationCode",
+    "pages/forgetPsw/changePsw/changePsw",
+    "pages/driver/register/register",
+    "pages/tourist/reserve/reserve",
+    "pages/order/orderList/orderList",
+    "pages/index/cIndex/appointGuide/appointGuide"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "奥运塔票务预约",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#00dd00",
+    "backgroundColor": "#eee",
+    "list": [
+      {
+        "pagePath": "pages/index/cIndex/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/cIndex/reserve/reserve",
+        "text": "团队购票"
+      },
+      {
+        "pagePath": "pages/index/cIndex/userCenter/userCenter",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}

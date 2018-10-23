@@ -1,0 +1,53 @@
+<!--pages/merchant/register/register.wxml-->
+<view class="title">
+    <text>旅游行业企业注册</text>
+</view>
+<view class='container'>
+   <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <input class="mobile" placeholder='请输入手机号' bindinput="mobileChange" type="text" value='{{mobile}}'/> 
+      <view class="weui-cell__ft">
+          <button disabled='{{codeBtnDisablied}}' class="code-btn weui-btn weui-vcode-btn" bindtap='getCode' type="primary">{{codeBtnText}}</button>
+      </view>
+    </view>
+    <view class="codeView">
+        <input class="code" placeholder='请输入验证码' bindblur="codeChange" type="text" />
+    </view>
+     <view class="nameView">
+        <input class="name" placeholder='请输入名称' type="text" bindblur="nameChange" value='{{name}}'/>
+    </view>
+    <view class="markView">
+        <input class="mark" placeholder='请输入商家描述' bindblur="markChange" type="text" value='{{mark}}'/>
+    </view>
+    <view class="identityCardView">
+        <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+                <view class="weui-uploader__title">上传营业执照照片</view>
+                <view class="weui-uploader__info">{{files.length}}/1</view>
+            </view>
+            <view class="weui-uploader__bd">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{files}}" wx:key="*this">
+                        <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                        </view>
+                    </block>
+                </view>
+                <view class="weui-uploader__input-box" wx:if="{{isUploadShow}}">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                </view>
+            </view>
+        </view>
+        <!-- <view bindtap='uploadLicenseCard'>
+            <text wx:if='{{idcardTip}}'>上传营业执照照片</text>
+            <icon wx:if='{{idcardok}}' animation="{{animationData}}" type="success" size="30"></icon>
+        </view> -->
+    </view>
+
+    <view class="submit">
+        <button type="primary" plain='' bindtap="register" wx:if="{{!id}}">注 册</button>
+        <button type="primary" plain='' bindtap="registerEdit" wx:if="{{id}}">注 册</button>
+    </view>
+    <view class="backIndex">
+      <view bindtap="backIndex">返回首页</view>
+    </view>
+</view>
